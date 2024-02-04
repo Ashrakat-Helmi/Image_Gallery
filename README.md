@@ -1,64 +1,125 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Image Gallery Website
+-Upload images.
+-View images.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Features
 
-## About Laravel
+- User authentication: Users can register, login, and manage their accounts.
+- Image uploading: Users can upload images to the gallery.
+- Image management: Users can view, edit, and delete their own images.
+- Image gallery: Users can browse all uploaded images.
+- Pagination: Images are displayed in a paginated manner to enhance performance.
+- Filtering and sorting: Users can filter and sort images based on different criteria.
+- Fancybox: Users can view images in a stylish lightbox using the Fancybox library.
+- jQuery form validation: Forms are validated on the client-side using jQuery.
+- SweetAlert: Users are presented with attractive and interactive alerts using SweetAlert.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Prerequisites
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- PHP 7.4 or higher
+- Composer
+- MySQL database
+- Laravel 9
+- Bootstrap 5
+- Laravel UI Auth
+- jQuery
+- Fancybox from Fancyapps
+- SweetAlert
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Installation
 
-## Learning Laravel
+1. Clone the repository to your local machine:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+git clone https://github.com/your/repository.git
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. Navigate to the project directory:
 
-## Laravel Sponsors
+```
+cd image-gallery
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+3. Install dependencies using Composer:
 
-### Premium Partners
+```
+composer install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+4. Create a copy of the `.env.example` file and rename it to `.env`. Update the database configuration settings in the `.env` file with your MySQL database credentials.
+
+5. Generate an application key:
+
+```
+php artisan key:generate
+```
+
+6. Run migrations to create the necessary database tables:
+
+```
+php artisan migrate
+```
+
+7. Publish the Laravel UI Auth views and assets:
+
+```
+php artisan ui bootstrap --auth
+```
+
+8. Install npm dependencies:
+
+```
+npm install
+```
+
+9. Build the assets:
+
+```
+npm run dev
+```
+
+10. Start the development server:
+
+```
+php artisan serve
+```
+
+11. Access the website in your browser using the URL provided by the development server.
+
+## Usage
+
+1. Register a new user account or log in with an existing account.
+2. Upload images to the gallery.
+3. Browse the gallery, filter and sort the images.
+4. Click on an image to view it in the Fancybox lightbox.
+5. Edit or delete your own images as needed.
+6. Log out when you're done.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+If you'd like to contribute to this project, please follow these steps:
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Fork the repository on GitHub.
+2. Create a new branch with a descriptive name for your feature or bug fix.
+3. Make your changes and commit them with clear and concise messages.
+4. Push your changes to your forked repository.
+5. Submit a pull request to the main repository detailing your changes.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Acknowledgments
+
+This project uses the following open-source libraries:
+
+- Laravel - https://laravel.com/
+- Bootstrap - https://getbootstrap.com/
+- Laravel UI - https://github.com/laravel/ui
+- jQuery - https://jquery.com/
+- Fancybox from Fancyapps - https://fancyapps.com/fancybox/
+- SweetAlert - https://sweetalert.js.org/
+
+## Contact
+
+If you have any questions or issues, please contact the project maintainer at [email protected]
