@@ -1,0 +1,45 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
+use App\Models\gallary_images;
+use Anakadote\ImageManager\Facades\ImageManager;
+
+class HomeController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index(Request $request)
+    {
+        $query= gallary_images::where('user_id',auth()->user()->id);
+        if($request->category){
+            $query=$query->where('category',$request->category);
+        }
+
+        if($request->sort_by){
+            $order=($request->sort_by == 'oldest')?'ASC':'DESC';
+            $query->orderBy('created_at',$order);
+        }else{
+            $query->orderBy('created_at','DESC');
+
+        }
+        $data['images'] = $query->paginate(4);
+
+        return view('home',$data);
+    }
+}
