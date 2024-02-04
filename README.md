@@ -122,4 +122,4 @@ This project uses the following open-source libraries:
 
 ## Contact
 
-If you have any questions or issues, please contact the project maintainer at [email protected]
+If you have any questions or issues, please contact the project maintainer at ashrakat5elkady@gmail.com
